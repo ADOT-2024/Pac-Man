@@ -1,7 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <termios.h>
+#ifdef _WIN32
+#include <io.h>
+#define access _access
+
+#else
 #include <unistd.h>
+#endif
 #include <string.h>
 
 // Oyun haritası boyutları
